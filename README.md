@@ -14,7 +14,8 @@ Inside this repository you will find an Xcode Project, which is a very simple ap
 1. Clone the repository
 2. Open the Xcode project
 3. Add some code 👩‍💻
-4. Push your changes
+4. Push your changes to a branch
+5. Raise a Pull Request to main
 
 Your mission is to add _something_ to the application, it might be a very simple Settings screen, or a new feature. that you think would be awesome, anything.
 
