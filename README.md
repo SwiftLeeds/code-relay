@@ -1,4 +1,4 @@
-[![Xcode - Build](https://github.com/SwiftLeeds/code-relay/actions/workflows/xcode.yml/badge.svg?branch=main)](https://github.com/SwiftLeeds/code-relay/actions/workflows/xcode.yml)
+[![Xcode - Build](https://github.com/SwiftLeeds/code-relay/actions/workflows/xcode.yml/badge.svg?event=push)](https://github.com/SwiftLeeds/code-relay/actions/workflows/xcode.yml)
 
 # Welcome to SwiftLeeds 24
 
