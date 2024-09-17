@@ -1,0 +1,15 @@
+## User settings
+*.xcuserdata/*
+*/xcuserdata/*
+xcuserdata/*
+xcuserdata
+*.pbxuser
+DerivedData
+.DS_Store
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+.build/
