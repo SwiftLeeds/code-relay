@@ -14,14 +14,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
+      - name: Navigate to the main directory
+        run: cd "Code Relay"
+
       - name: Set Default Scheme
         run: |
           scheme_list=$(xcodebuild -list -json | tr -d "\n")
           default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
           echo $default >default
           echo "Using default scheme: $default"
-        
+      
       - name: Build
         run: |
           scheme=$(cat default)
