@@ -27,11 +27,19 @@ struct DetailsView: View {
             if showCheekyPrawn {
                 Text("🦐").font(.largeTitle)
             }
+            
+            Spacer()
+            
+            if let phoneNumber = location.phoneNumber {
+                Link("Call", destination: URL(string: "tel:\(phoneNumber)")!)
+                    .padding()
+            }
         }
         .frame(maxHeight: .infinity, alignment: .top)
     }
 
     private func toggleCheekyPrawn() {
         showCheekyPrawn.toggle()
+        // TODO: Prawn confetti please
     }
 }

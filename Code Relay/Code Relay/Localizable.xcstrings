@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Call" : {
+
+    },
     "Developed at " : {
       "localizations" : {
         "en" : {
