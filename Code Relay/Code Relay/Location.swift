@@ -11,6 +11,7 @@ struct Location: Identifiable {
     let title: String
     let details: String
     let coordinate: CLLocationCoordinate2D?
+    let phoneNumber: String?
     var id: String { title }
 }
 
