@@ -9,20 +9,15 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State private var thingsToDo = [
-        "Leeds Playhouse",
-        "Leeds Art Gallery",
-        "Victoria Leeds",
-        "Royal Armouries",
-        "Brew Society",
-        "Brew Dog"
-    ]
+   var viewModel = ViewModel()
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(thingsToDo, id: \.self) { stuff in
-                    Text(stuff)
+                ForEach(viewModel.locationsData) { location in
+                    NavigationLink(location.id) { 
+                        DetailsView(location: location)
+                    }
                 }
             }
             .navigationTitle("Guide to Leeds")
