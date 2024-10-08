@@ -2,19 +2,55 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Developed at " : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developed at "
+          }
+        }
+      }
     },
     "Guide to Leeds" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guide to Leeds"
+          }
+        }
+      }
     },
     "Home" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        }
+      }
     },
     "Settings" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
     },
     "SwiftLeeds" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SwiftLeeds"
+          }
+        }
+      },
+      "shouldTranslate" : false
     }
   },
   "version" : "1.0"
