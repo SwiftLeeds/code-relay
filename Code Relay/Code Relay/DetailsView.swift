@@ -12,7 +12,7 @@ struct DetailsView: View {
    
     //To do - link this up to actual coordinates!
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0, longitude: 0), 
-                                                   span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+    @State private var showCheekyPrawn = false                                              span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
 
     @State var location: Location
     
@@ -23,8 +23,15 @@ struct DetailsView: View {
                 .frame(maxWidth: .infinity)               
             
             Text(location.title).fontWeight(.bold)
-            Text(location.details)
+            Text(location.details).onTapGesture { toggleCheekyPrawn() }
+            if showCheekyPrawn {
+                Text("🦐").font(.largeTitle)
+            }
         }
         .frame(maxHeight: .infinity, alignment: .top)
-    } 
+    }
+
+    private func toggleCheekyPrawn() {
+        showCheekyPrawn.toggle()
+    }
 }
