@@ -12,7 +12,8 @@ struct DetailsView: View {
    
     //To do - link this up to actual coordinates!
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0, longitude: 0), 
-    @State private var showCheekyPrawn = false                                              span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+                                                   span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+    @State private var showCheekyPrawn = false                                  
 
     @State var location: Location
     
