@@ -14,6 +14,10 @@ struct ContentView: View {
                 HomeView()
             }
             
+            Tab("Favourites", systemImage: "star") {
+                // TODO: Add Favourites View 🍤
+            }
+            
             Tab("Settings", systemImage: "gear") {
                 SettingsView()
             }
