@@ -9,7 +9,13 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text("SETTINGS")
+        VStack {
+            Text("Developed at ") +
+            Text("SwiftLeeds")
+                .font(.title)
+                .bold()
+                .foregroundStyle(.red)
+        }
     }
 }
 

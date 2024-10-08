@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @State private var thingsToDo = [
+        "Leeds Playhouse",
+        "Leeds Art Gallery",
+        "Victoria Leeds",
+        "Royal Armouries",
+        "Brew Society",
+        "Brew Dog"
+    ]
+    
     var body: some View {
-        Text("HOME")
+        NavigationStack {
+            List {
+                ForEach(thingsToDo, id: \.self) { stuff in
+                    Text(stuff)
+                }
+            }
+            .navigationTitle("Guide to Leeds")
+        }
     }
 }
 
