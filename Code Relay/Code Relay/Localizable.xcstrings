@@ -1,7 +1,19 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Add" : {
+
+    },
+    "Add a new awesome location in Leeds!" : {
+
+    },
     "Developed at " : {
+
+    },
+    "Enter new location" : {
+
+    },
+    "Enter your name" : {
 
     },
     "Guide to Leeds" : {
