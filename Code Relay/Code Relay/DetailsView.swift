@@ -24,6 +24,13 @@ struct DetailsView: View {
             
             Text(location.title).fontWeight(.bold)
             Text(location.details)
+            
+            Spacer()
+            
+            if let phoneNumber = location.phoneNumber {
+                Link("Call", destination: URL(string: "tel:\(phoneNumber)")!)
+                    .padding()
+            }
         }
         .frame(maxHeight: .infinity, alignment: .top)
     } 

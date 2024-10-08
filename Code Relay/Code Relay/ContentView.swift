@@ -17,7 +17,7 @@ struct ContentView: View {
             Tab("Settings", systemImage: "gear") {
                 SettingsView()
             }
-        }
+        }.tint(.red)
     }
 }
 
