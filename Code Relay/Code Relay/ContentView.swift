@@ -26,7 +26,7 @@ struct ContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: .shake)) { _ in
                 isShowingAlert = true
             }
-            .alert("Here is a ChatGPT joke", isPresented: $isShowingAlert) {
+            .alert("Here is an Adam joke", isPresented: $isShowingAlert) {
             } message: {
                 Text(randomAdamJoke)
             }
