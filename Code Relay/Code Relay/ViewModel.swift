@@ -7,7 +7,7 @@
 
 import CoreLocation
 
-struct ViewModel {
+final class ViewModel: ObservableObject {
     
     init() {
         locationsData = [
@@ -20,5 +20,5 @@ struct ViewModel {
         ]
     }
     
-    let locationsData: [Location] 
+    @Published var locationsData: [Location] 
 }

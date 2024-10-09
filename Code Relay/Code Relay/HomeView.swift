@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    
-   var viewModel = ViewModel()
+    @State var showAddNewLocation: Bool = false
+    @StateObject var viewModel = ViewModel()
     
     var body: some View {
         NavigationStack {
@@ -20,8 +20,28 @@ struct HomeView: View {
                     }
                 }
             }
+            .toolbar { 
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showAddNewLocation = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .accessibilityLabel("Add new location")
+                }
+            }
             .navigationTitle("Guide to Leeds")
         }
+        .sheet(isPresented: $showAddNewLocation) { 
+            NewLocationView(title: "", details: "", phoneNumber: "")
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .newLocation)) { notification in
+            guard let location = notification.userInfo?["location"] as? Location else {
+                return 
+            }
+            viewModel.locationsData.append(location)
+        }
+
     }
 }
 
