@@ -11,7 +11,12 @@ struct ViewModel {
     
     init() {
         locationsData = [
-            Location(title: "Leeds Playhouse", details: "Good Conference", coordinate: nil, phoneNumber: "0044 113 213 7700"),
+            Location(
+                title: "Leeds Playhouse",
+                details: "Good Conference",
+                coordinate: CLLocationCoordinate2D(latitude: 53.7982, longitude: -1.5351),
+                phoneNumber: "0044 113 213 7700"
+            ),
             Location(title: "Leeds Art Gallery", details: "Good Art", coordinate: nil, phoneNumber: "0044 113 378 5350"),
             Location(title: "Victoria Leeds", details: "Something good", coordinate: nil, phoneNumber: "0044 113 245 5333"),
             Location(title: "Royal Armouries", details: "Good Armor", coordinate: nil, phoneNumber: "0044 113 220 1916"),
