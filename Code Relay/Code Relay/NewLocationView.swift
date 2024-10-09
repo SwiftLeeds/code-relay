@@ -18,42 +18,45 @@ public struct NewLocationView: View {
     @State var phoneNumber: String
     
     public var body: some View {
-        VStack {
-            List {
-                TextField("Title", text: $title)
-                TextField("Details", text: $details)
-                TextField("Coordinate lat", value: $lat, format: .number)
-                TextField("Coordinate long", value: $long, format: .number)
-                TextField("Phone number", text: $phoneNumber)
-            }
-            Button { 
-                let coordinate: CLLocationCoordinate2D? = if let lat, let long {
-                    .init(latitude: lat, longitude: long)
-                } else { 
-                    nil
+        NavigationStack {
+            VStack {
+                List {
+                    TextField("Title", text: $title)
+                    TextField("Details", text: $details)
+                    TextField("Coordinate lat", value: $lat, format: .number)
+                    TextField("Coordinate long", value: $long, format: .number)
+                    TextField("Phone number", text: $phoneNumber)
                 }
-                NotificationCenter.default.post(
-                    name: .newLocation,
-                    object: self,
-                    userInfo: ["location": Location(
-                        title: title,
-                        details: details,
-                        coordinate: coordinate,
-                        phoneNumber: phoneNumber
-                    )]
-                )
-                dismiss()
-            } label: {
-                HStack {
-                    Spacer()
-                    Text("Save")
-                    Spacer()
+                Button { 
+                    let coordinate: CLLocationCoordinate2D? = if let lat, let long {
+                        .init(latitude: lat, longitude: long)
+                    } else { 
+                        nil
+                    }
+                    NotificationCenter.default.post(
+                        name: .newLocation,
+                        object: self,
+                        userInfo: ["location": Location(
+                            title: title,
+                            details: details,
+                            coordinate: coordinate,
+                            phoneNumber: phoneNumber
+                        )]
+                    )
+                    dismiss()
+                } label: {
+                    HStack {
+                        Spacer()
+                        Text("Save")
+                        Spacer()
+                    }
                 }
+                .font(.title2)
+                .bold()
+                .buttonStyle(.borderedProminent)
+                .padding(.horizontal, 24)
             }
-            .font(.title2)
-            .bold()
-            .buttonStyle(.borderedProminent)
-            .padding(.horizontal, 24)
+            .navigationTitle("Add New Location")
         }
     }
 }
