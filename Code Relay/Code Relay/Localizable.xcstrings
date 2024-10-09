@@ -44,6 +44,9 @@
         }
       }
     },
+    "Category" : {
+
+    },
     "Coordinate lat" : {
       "localizations" : {
         "en" : {
@@ -104,6 +107,9 @@
         }
       }
     },
+    "Here is an Adam joke" : {
+
+    },
     "Home" : {
       "localizations" : {
         "en" : {
@@ -113,6 +119,12 @@
           }
         }
       }
+    },
+    "If you also desired to have one of those flushy cats, train your luck before!" : {
+
+    },
+    "Lucky wheel" : {
+
     },
     "Phone number" : {
       "localizations" : {
@@ -147,7 +159,11 @@
         }
       }
     },
+    "Spin the wheel" : {
+
+    },
     "SwiftLeeds" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -157,6 +173,9 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "SwiftLeeds ❤️" : {
+
     },
     "Title" : {
       "localizations" : {
@@ -168,6 +187,12 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "Train your luck" : {
+
+    },
+    "Value" : {
+
     }
   },
   "version" : "1.0"
