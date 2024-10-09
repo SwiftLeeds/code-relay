@@ -12,9 +12,10 @@ struct DetailsView: View {
    
     @State private var showCheekyPrawn = false
     @State private var region: MKCoordinateRegion
-    @State private var location: Location
     @State private var lookAroundScene: MKLookAroundScene?
     @State private var isLookingAround = false
+    
+    private var location: Location
 
     init(location: Location) {
         self.location = location

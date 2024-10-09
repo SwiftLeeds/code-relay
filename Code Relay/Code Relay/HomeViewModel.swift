@@ -1,5 +1,5 @@
 //
-//  ViewModel.swift
+//  HomeViewModel.swift
 //  Code Relay
 //
 //  Created by Sebastian Bolling on 2024-10-08.
@@ -7,7 +7,7 @@
 
 import CoreLocation
 
-final class ViewModel: ObservableObject {
+final class HomeViewModel: ObservableObject {
     
     init() {
         locationsData = [
