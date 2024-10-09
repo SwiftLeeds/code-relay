@@ -21,6 +21,10 @@ struct ContentView: View {
             Tab("Settings", systemImage: "gear") {
                 SettingsView()
             }
+            
+            Tab("Lucky wheel", systemImage: "") {
+                
+            }
         }.tint(.red)
     }
 }
