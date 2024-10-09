@@ -10,6 +10,7 @@ import CoreLocation
 
 public struct NewLocationView: View {
     @Environment(\.dismiss) var dismiss
+    @FocusState var field: FocusField?
     
     @State var title: String
     @State var details: String
@@ -22,10 +23,23 @@ public struct NewLocationView: View {
             VStack {
                 List {
                     TextField("Title", text: $title)
+                        .id(FocusField.title)
+                        .focused($field, equals: .title)
                     TextField("Details", text: $details)
+                        .id(FocusField.details)
+                        .focused($field, equals: .details)
                     TextField("Coordinate lat", value: $lat, format: .number)
+                        .id(FocusField.lat)
+                        .focused($field, equals: .lat)
                     TextField("Coordinate long", value: $long, format: .number)
+                        .id(FocusField.long)
+                        .focused($field, equals: .long)
                     TextField("Phone number", text: $phoneNumber)
+                        .id(FocusField.phoneNumber)
+                        .focused($field, equals: .phoneNumber)
+                }
+                .onSubmit {
+                    field = field?.next
                 }
                 Button { 
                     let coordinate: CLLocationCoordinate2D? = if let lat, let long {
