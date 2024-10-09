@@ -12,7 +12,9 @@ struct DetailsView: View {
    
     @State private var showCheekyPrawn = false
     @State private var region: MKCoordinateRegion
-    @State var location: Location
+    @State private var location: Location
+    @State private var lookAroundScene: MKLookAroundScene?
+    @State private var isLookingAround = false
 
     init(location: Location) {
         self.location = location
@@ -31,7 +33,25 @@ struct DetailsView: View {
                 )
             ))
             .frame(height: 400)
-            .frame(maxWidth: .infinity)               
+            .frame(maxWidth: .infinity)
+            .onAppear {
+                getLookAroundScene()
+            }
+            .lookAroundViewer(isPresented: $isLookingAround, initialScene: lookAroundScene)
+            .overlay(alignment: .bottomTrailing) {
+                if lookAroundScene != nil {
+                    Button {
+                        isLookingAround.toggle()
+                    } label: {
+                        Image(systemName: "binoculars.fill")
+                            .foregroundStyle(Color(.secondaryLabel))
+                            .frame(width: 40, height: 40)
+                            .background(Color(.tertiarySystemGroupedBackground))
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                    }
+                    .padding(.all, 8)
+                }
+            }
             
             Text(location.title).fontWeight(.bold)
             Text(location.details).onTapGesture { toggleCheekyPrawn() }
@@ -53,6 +73,20 @@ struct DetailsView: View {
         showCheekyPrawn.toggle()
         // TODO: Prawn confetti please
     }
+    
+    private func getLookAroundScene() {
+        lookAroundScene = nil
+        Task {
+            if let coordinate = location.coordinate {
+                let request = MKLookAroundSceneRequest(coordinate: coordinate)
+                do {
+                    lookAroundScene = try await request.scene
+                } catch {
+                    print("Error getting look around scene: \(error)")
+                }
+            }
+        }
+    }
 }
 
 #Preview {
@@ -60,7 +94,7 @@ struct DetailsView: View {
         location: Location(
             title: "A Place",
             details: "The Place",
-            coordinate: CLLocationCoordinate2D(latitude: 53.7981911, longitude: -1.5376449),
+            coordinate: CLLocationCoordinate2D(latitude: 41.882683, longitude: -87.623321),
             phoneNumber: nil
         )
     )
