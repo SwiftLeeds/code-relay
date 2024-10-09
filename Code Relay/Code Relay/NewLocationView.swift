@@ -47,6 +47,7 @@ public struct NewLocationView: View {
                     } else { 
                         nil
                     }
+                    guard !title.isEmpty, !details.isEmpty else { return }
                     NotificationCenter.default.post(
                         name: .newLocation,
                         object: self,
