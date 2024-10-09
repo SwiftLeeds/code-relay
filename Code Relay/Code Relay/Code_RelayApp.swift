@@ -19,7 +19,7 @@ struct Code_RelayApp: App {
 extension UIWindow {
     open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            print("Keep shaking")
+            NotificationCenter.default.post(name: .shake, object: nil)
         }
     }
 }
