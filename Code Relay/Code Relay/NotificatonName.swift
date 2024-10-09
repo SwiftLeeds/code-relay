@@ -8,4 +8,5 @@ import Foundation
 
 extension Notification.Name {
     static let newLocation = Notification.Name("newLocation")
+    static let shake = Notification.Name("shake")
 }
