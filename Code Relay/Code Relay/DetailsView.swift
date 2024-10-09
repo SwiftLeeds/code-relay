@@ -10,18 +10,19 @@ import MapKit
 
 struct DetailsView: View {
    
-    //To do - link this up to actual coordinates!
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0, longitude: 0), 
-                                                   span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-    @State private var showCheekyPrawn = false                                  
-
+    @State private var showCheekyPrawn = false
     @State var location: Location
     
     var body: some View {
         VStack {
-            Map(initialPosition: .region(region))
-                .frame(height: 400)
-                .frame(maxWidth: .infinity)               
+            Map(initialPosition: .region(
+                MKCoordinateRegion(
+                    center: location.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0), 
+                    span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+                )
+            ))
+            .frame(height: 400)
+            .frame(maxWidth: .infinity)               
             
             Text(location.title).fontWeight(.bold)
             Text(location.details).onTapGesture { toggleCheekyPrawn() }
