@@ -11,7 +11,7 @@ struct SettingsView: View {
     var body: some View {
         VStack {
             Text("Developed at ") +
-            Text("SwiftLeeds")
+            Text("SwiftLeeds ❤️")
                 .font(.title)
                 .bold()
                 .foregroundStyle(.red)
