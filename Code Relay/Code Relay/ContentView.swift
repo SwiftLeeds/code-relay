@@ -22,8 +22,10 @@ struct ContentView: View {
                 SettingsView()
             }
             
-            Tab("Lucky wheel", systemImage: "") {
-                
+            Tab("Lucky wheel", systemImage: "arcade.stick") {
+                NavigationView {
+                    SpinWheelView()
+                }
             }
         }.tint(.red)
     }
