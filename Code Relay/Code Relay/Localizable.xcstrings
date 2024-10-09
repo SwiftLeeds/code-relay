@@ -1,7 +1,25 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "🦐" : {
+
+    },
+    "Add new location" : {
+
+    },
+    "Add New Location" : {
+
+    },
     "Call" : {
+
+    },
+    "Coordinate lat" : {
+
+    },
+    "Coordinate long" : {
+
+    },
+    "Details" : {
 
     },
     "Developed at " : {
@@ -13,6 +31,9 @@
           }
         }
       }
+    },
+    "Favourites" : {
+
     },
     "Guide to Leeds" : {
       "localizations" : {
@@ -34,6 +55,12 @@
         }
       }
     },
+    "Phone number" : {
+
+    },
+    "Save" : {
+
+    },
     "Settings" : {
       "localizations" : {
         "en" : {
@@ -54,6 +81,9 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "Title" : {
+
     }
   },
   "version" : "1.0"
