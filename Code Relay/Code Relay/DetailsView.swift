@@ -13,16 +13,18 @@ struct DetailsView: View {
     @State private var showCheekyPrawn = false
     @State private var showConfetti = false
     @State private var region: MKCoordinateRegion
-    @State private var location: Location
     @State private var lookAroundScene: MKLookAroundScene?
     @State private var isLookingAround = false
+    
+    private var location: Location
 
     init(location: Location) {
         self.location = location
+        let spanDelta = location.coordinate != nil ? 0.01 : 0.20
         self.region = MKCoordinateRegion(
-                center: location.coordinate ?? CLLocationCoordinate2D(latitude: 53.8059743, 
-                                                                      longitude: -1.6181322),
-                span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                center: location.coordinate ?? CLLocationCoordinate2D(latitude: 53.79826, 
+                                                                      longitude: -1.53343),
+                span: MKCoordinateSpan(latitudeDelta: spanDelta, longitudeDelta: spanDelta))
     }
     
     var body: some View {
@@ -106,9 +108,20 @@ struct DetailsView: View {
 #Preview {
     DetailsView(
         location: Location(
-            title: "A Place",
+            title: "A Place With A Location",
             details: "The Place",
             coordinate: CLLocationCoordinate2D(latitude: 41.882683, longitude: -87.623321),
+            phoneNumber: nil
+        )
+    )
+}
+
+#Preview {
+    DetailsView(
+        location: Location(
+            title: "A Place Without A Location",
+            details: "The Place",
+            coordinate: nil,
             phoneNumber: nil
         )
     )
