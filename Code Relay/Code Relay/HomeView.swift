@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State var showAddNewLocation: Bool = false
-    @StateObject var viewModel = ViewModel()
+    @StateObject var viewModel = HomeViewModel()
     
     var body: some View {
         NavigationStack {
