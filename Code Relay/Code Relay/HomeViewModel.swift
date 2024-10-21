@@ -45,8 +45,8 @@ final class HomeViewModel: ObservableObject {
                 coordinate: CLLocationCoordinate2D(latitude: 53.801097, longitude: -1.538588),
                 phoneNumber: "0044 113 391 2950"
             ),
-            Location(title: "NQ64 Arcade Bar", details: "Retro Gaming Bar", coordinate: nil, phoneNumber: "0044 113 245 5333"),
-            Location(title: "K-Cube", details: "Karaoke all night long", coordinate: nil, phoneNumber: "0044 113 322 6625"),
+            Location(title: "NQ64 Arcade Bar", details: "Retro Gaming Bar", coordinate: CLLocationCoordinate2D(latitude: 53.8004635, longitude: -1.5406172), phoneNumber: "0044 113 245 5333"),
+            Location(title: "K-Cube", details: "Karaoke all night long", coordinate: CLLocationCoordinate2D(latitude: 53.8010051, longitude: -1.5471566), phoneNumber: "0044 113 322 6625"),
         ]
     }
     
